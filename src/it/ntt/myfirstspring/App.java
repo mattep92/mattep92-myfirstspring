@@ -44,11 +44,17 @@ public class App {
         // Implemento la SI (Setter Injection)
 
         System.out.println("\n### Setter Injection ###");
-
+        
         ClassPathXmlApplicationContext contextDISetter = new ClassPathXmlApplicationContext("applicationContextDIsetter.xml");
         Coach myCoach3 = contextDISetter.getBean("myDICoach", Coach.class);
-
+        
         System.out.println(myCoach3.getDailyWorkout());
+
+        // Utilizza init e destroy methods
+        // I metodi init e destroy vengono invocati rispettivamente
+        // alla creazione e alla distruzione dell'istanza della classe
+
+        System.out.println("\n### init & destroy ###");
 
         contextDISetter.close();
 

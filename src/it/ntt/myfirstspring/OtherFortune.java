@@ -7,4 +7,12 @@ public class OtherFortune implements FortuneService {
         return "This is just another fortune service";
     }
     
+    public void doInitStuffs() {
+        System.out.println("Initializing Other Fortune Service...");
+    }
+
+    public void doDestroyStuffs() {
+        System.out.println("Destroying Other Fortune Service...");
+    }
+    
 }
