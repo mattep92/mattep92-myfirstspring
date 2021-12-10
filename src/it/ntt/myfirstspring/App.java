@@ -50,13 +50,44 @@ public class App {
         
         System.out.println(myCoach3.getDailyWorkout());
 
-        // Utilizza init e destroy methods
+        // Utilizzo init e destroy methods
         // I metodi init e destroy vengono invocati rispettivamente
         // alla creazione e alla distruzione dell'istanza della classe
 
         System.out.println("\n### init & destroy ###");
 
         contextDISetter.close();
+
+        // Utilizzo Annotations
+
+        System.out.println("\n### Annotations ###");
+
+        // Risolvere gli errori di questa parte
+
+        // ClassPathXmlApplicationContext contextAnnotations = new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
+        
+        // Come glielo passiamo adesso che non abbiamo più l'ID?
+        // Di default, nei Component, l'ID è il nome della classe,
+        // MA con la prima lettera MINUSCOLA!
+
+        // Si può fare, ma è brutto... ed evitare questo è il motivo per cui usiamo Spring
+        // TennisCoach myCoach4 = contextAnnotations.getBean("tennisCoach", TennisCoach.class);
+        // OtherFortune fortune = new OtherFortune();
+        // myCoach4.setFortuneService(fortune);
+        // System.out.println(myCoach4.getDailyWorkout());
+        // contextAnnotations.close();
+
+        // Coach myCoach4 = contextAnnotations.getBean("tennisCoach", Coach.class);
+        // System.out.println(myCoach4.getDailyWorkout());
+
+        // Utilizzo Autowired
+
+        // System.out.println("\n### Autowired ###");
+
+        // Coach myCoach5 = contextAnnotations.getBean("soccerCoach", Coach.class);
+        // System.out.println(myCoach5.getDailyWorkout());
+
+        // contextAnnotations.close();
 
     }
 }
