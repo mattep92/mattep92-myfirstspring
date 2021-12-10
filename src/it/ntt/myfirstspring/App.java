@@ -1,6 +1,9 @@
 package it.ntt.myfirstspring;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import it.ntt.myfirstspring.config.ComponentScanConfig;
 
 public class App {
     
@@ -88,6 +91,18 @@ public class App {
         // System.out.println(myCoach5.getDailyWorkout());
 
         // contextAnnotations.close();
+
+        // Utilizzo Spring config
+
+        System.out.println("\n### Spring config with Java code ###");
+
+        AnnotationConfigApplicationContext contextJavaConfig = new AnnotationConfigApplicationContext(ComponentScanConfig.class);
+
+        Coach myCoach6 = contextJavaConfig.getBean("soccerCoach", Coach.class);
+
+        System.out.println(myCoach6.getDailyWorkout());
+
+        contextJavaConfig.close();
 
     }
 }
