@@ -44,7 +44,7 @@ public class App {
 
         contextDIconstructor.close();
 
-        // Implemento la SI (Setter Injection)
+        // Implemento la DI tramite SI (Setter Injection)
 
         System.out.println("\n### Setter Injection ###");
         
@@ -67,7 +67,7 @@ public class App {
 
         // Risolvere gli errori di questa parte
 
-        // ClassPathXmlApplicationContext contextAnnotations = new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
+        ClassPathXmlApplicationContext contextAnnotations = new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
         
         // Come glielo passiamo adesso che non abbiamo più l'ID?
         // Di default, nei Component, l'ID è il nome della classe,
@@ -80,17 +80,17 @@ public class App {
         // System.out.println(myCoach4.getDailyWorkout());
         // contextAnnotations.close();
 
-        // Coach myCoach4 = contextAnnotations.getBean("tennisCoach", Coach.class);
-        // System.out.println(myCoach4.getDailyWorkout());
+        Coach myCoach4 = contextAnnotations.getBean("tennisCoach", Coach.class);
+        System.out.println(myCoach4.getDailyWorkout());
 
         // Utilizzo Autowired
 
         // System.out.println("\n### Autowired ###");
 
-        // Coach myCoach5 = contextAnnotations.getBean("soccerCoach", Coach.class);
-        // System.out.println(myCoach5.getDailyWorkout());
+        Coach myCoach5 = contextAnnotations.getBean("soccerCoach", Coach.class);
+        System.out.println(myCoach5.getDailyWorkout());
 
-        // contextAnnotations.close();
+        contextAnnotations.close();
 
         // Utilizzo Spring config
 

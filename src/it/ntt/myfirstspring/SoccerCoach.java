@@ -24,12 +24,6 @@ public class SoccerCoach implements Coach {
         return "Kick the ball! || "+ fortuneService.getFortune();
     }
 
-    @Autowired
-    @Qualifier("otherFortune")
-    public void setFortuneService(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
-
     public String getName() {
         return name;
     }

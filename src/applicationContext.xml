@@ -8,11 +8,6 @@
   <bean
     id="myCoach"
     class="it.ntt.myfirstspring.BaseballCoach">
-    <constructor-arg ref="myFortuneService" />
   </bean>
-
-  <bean
-    id="myFortuneService"
-    class="it.ntt.myfirstspring.HappyFortune">
-  </bean>
+  
 </beans>

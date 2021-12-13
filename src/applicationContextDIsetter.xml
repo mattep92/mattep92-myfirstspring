@@ -9,7 +9,6 @@
     id="myDICoach"
     init-method="doInitStuffs"
     destroy-method="doDestroyStuffs"
-    scope="prototype"
     class="it.ntt.myfirstspring.TennisCoach">
     <property name="fortuneService" ref="myFortuneService" />
   </bean>

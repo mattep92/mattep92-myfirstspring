@@ -1,6 +1,7 @@
 package it.ntt.myfirstspring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,7 +11,6 @@ public class TennisCoach implements Coach {
 
     public TennisCoach() {}
 
-    @Autowired
     public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
@@ -20,6 +20,8 @@ public class TennisCoach implements Coach {
         return "Try to hit the ball :P || "+ fortuneService.getFortune();
     }
 
+    @Autowired
+    @Qualifier("otherFortune")
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
